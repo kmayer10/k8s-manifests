@@ -19,10 +19,7 @@ spec:
           containerPort: 4000
         env:
         - name: DB_PWD
-          valueFrom:
-            secretKeyRef:
-              name: db-password
-              key: password
+          value: india123
   replicas: 4
   selector:
     matchLabels:
