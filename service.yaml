@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: application
-  namespace: kul
+  namespace: default
   labels:
     type: frontend
 spec:
