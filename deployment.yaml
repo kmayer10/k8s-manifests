@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: application
-  namespace: kul
+  namespace: default
   labels:
     type: frontend
 spec:
