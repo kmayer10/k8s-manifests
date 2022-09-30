@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application
+  namespace: kul
+  labels:
+    type: frontend
+spec:
+  template:
+    metadata:
+      labels:
+        type: frontend
+    spec:
+      containers:
+      - name: application
+        image: kulbhushanmayer/nodejs-app:v1
+        ports:
+        - name: application
+          containerPort: 4000
+        env:
+        - name: DB_PWD
+          valueFrom:
+            secretKeyRef:
+              name: db-password
+              key: password
+  replicas: 4
+  selector:
+    matchLabels:
+      type: frontend
